@@ -3,8 +3,4 @@ public class ContaPoupanca extends Conta{
         super(cliente);
     }
 
-    public void printExtrato() {
-        String msg = " ---- Extrato Conta Poupança ----";
-        super.printInfoConta(msg);
-    }
 }

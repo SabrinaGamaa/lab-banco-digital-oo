@@ -3,25 +3,38 @@ public abstract class Conta {
     private int numero;
     private double saldo;
     private Cliente cliente;
+    private static int num = 1;
 
     protected Conta() {
     }
 
     public Conta(Cliente cliente) {
-        int num = 1;
+
         this.agencia = 1;
         this.numero = num++;
         this.cliente = cliente;
     }
 
     public void sacar(double valor) {
-        saldo -= valor;
-
+        if (valor >= getSaldo()) {
+            System.out.println("Saldo Insuficiente!!!");
+        } else {
+            saldo -= valor;
+        }
     }
 
     public void depositar(double valor) {
         saldo += valor;
 
+    }
+
+    public void transferencia(double valor, Conta destino) {
+        if (this.getSaldo() >= valor) {
+            this.sacar(valor);
+            destino.depositar(valor);
+        } else {
+            System.out.println("Saldo Insuficiente para realizar essa transferencia");
+        }
     }
 
     public int getAgencia() {

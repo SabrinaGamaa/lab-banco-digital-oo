@@ -4,8 +4,4 @@ public class ContaCorrente extends Conta{
         super(cliente);
     }
 
-    public void printExtrato(){
-        String msg = "=-=- Extrato Conta Corrente -=-=";
-        super.printInfoConta(msg);
-    }
 }

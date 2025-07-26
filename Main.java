@@ -17,6 +17,8 @@ public class Main {
         cc.depositar(1000);
         cc.sacar(100);
 
+        cc.transferencia(50, poupanca);
+
         cc.printInfoConta("---- Extrato da Conta Corrente ---- ");
 
         System.out.println();
@@ -24,6 +26,7 @@ public class Main {
         poupanca.depositar(15000);
 
         poupanca.printInfoConta("=-=- Extrato da Conta Poupança -=-=");
+
 
 
     }
